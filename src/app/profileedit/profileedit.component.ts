@@ -22,6 +22,11 @@ this.userdetails();
     this.email = localStorage.getItem("useremail");
     this.farmerservice.getFarmerDetails(this.email).subscribe((data: any)=>{
       this.user =data;
+      console.log(this.user.id);
+      const userid = this.user.id;
+      localStorage.setItem('id', userid.toString());
+      localStorage.setItem('name',this.user.name);
+     
     })
   }
 

@@ -1,0 +1,26 @@
+<!-- product-list.component.html -->
+<div class="product-list">
+
+    <h2 class="product-list-heading">Product List</h2>
+
+      <button class="btn btn-primary" style="margin-left: 45px; " routerLink="/farmer">Back</button>
+
+    <ul class="product-items">
+      <li *ngFor="let product of products" class="product-item">
+        <!-- You can use an actual product image here -->
+       <!-- <div class="product-thumbnail">
+          
+          <span class="placeholder-image">Product Image</span>
+        </div>  -->
+        <div class="product-details">
+          <h3 class="product-name">{{ product.productName }}</h3>
+          <div class="product-meta">
+            <span class="product-quantity">Quantity: {{ product.productQuantity }}</span>
+            <span class="product-unit-price">Unit Price: {{ product.productUnitPrice | currency }}</span>
+            <span class="product-total-price">Total: {{ product.productQuantity * product.productUnitPrice | currency }}</span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  

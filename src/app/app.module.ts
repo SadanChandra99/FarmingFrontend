@@ -24,7 +24,9 @@ import { ViewComplaintComponent } from './view-complaint/view-complaint.componen
 import { UpdateComplaintComponent } from './update-complaint/update-complaint.component';
 import { EditprofileComponent } from './editprofile/editprofile.component';
 import { ProfileeditComponent } from './profileedit/profileedit.component';
-import { MyproductsComponent } from './myproducts/myproducts.component';
+import { TestComponent } from './test/test.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+
 
 
 // import { AuthGuard } from './auth.guard';
@@ -33,9 +35,11 @@ import { MyproductsComponent } from './myproducts/myproducts.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'test', component: TestComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent},
   { path: 'about-us', component: AboutUsComponent},
+  { path: 'addproduct', component: AddproductComponent},
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard], data : {role: 'ROLE_ADMIN'} },
   { path: 'farmer', component: FarmerDashboardComponent, canActivate: [AuthGuard], data : {role: 'ROLE_FARMER'} },
   { path: 'supplier', component: SupplierDashboardComponent, canActivate: [AuthGuard], data : {role: 'ROLE_SUPPLIER'} },
@@ -45,7 +49,7 @@ const routes: Routes = [
   {path: 'edit-profile', component: EditprofileComponent},
   {path: 'edit-profile2', component: ProfileeditComponent},
   { path: '**', redirectTo: '/login' },
-  {path: 'myproducts', component: MyproductsComponent}
+  
 
 
  
@@ -67,7 +71,9 @@ const routes: Routes = [
     UpdateComplaintComponent,
     EditprofileComponent,
     ProfileeditComponent,
-    MyproductsComponent
+    TestComponent,
+    AddproductComponent,
+    
 
   
   ],
