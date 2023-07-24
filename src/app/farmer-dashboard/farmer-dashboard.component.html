@@ -13,7 +13,7 @@
       <li><a href="#">Update Complaint</a></li>
       <li><a href="#">Create Order</a></li>
       <li><a href="#">View Orders</a></li>
-      <li><a href="#">Users</a></li>
+      <li><a routerLink="/products">My Products</a></li>
    
       <!-- Add more items here if needed -->
     </ul>
@@ -24,6 +24,48 @@
     <!-- Main content goes here -->
     <h1>Welcome to Your Dashboard</h1>
     <p>This is the main content area where you can display various dashboard components.</p>
+    
+      
+<!-- product-list.component.html -->
+<div class="product-list">
+  <h2>Product List</h2>
+  <ul>
+    <li *ngFor="let product of products" class="product-item">
+      <div class="product-details">
+        <span class="product-name">{{ product.productName }}</span>
+        <span class="product-quantity">Quantity: {{ product.productQuantity }}</span>
+        <span class="product-unit-price">Unit Price: {{ product.productUnitPrice | currency }}</span>
+        <span class="product-total-price">Total Price: {{ product.productQuantity * product.productUnitPrice | currency }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- <div class="product-list">
+  <h2 class="product-list-heading">Product List</h2>
+  <ul class="product-items">
+    <li *ngFor="let product of products" class="product-item">
+      <div class="product-thumbnail">
+      
+        <span class="placeholder-image">Product Image</span>
+      </div>
+      <div class="product-details">
+        <h3 class="product-name">{{ product.productName }}</h3>
+        <div class="product-meta">
+          <span class="product-quantity">Quantity: {{ product.productQuantity }}</span>
+          <span class="product-unit-price">Unit Price: {{ product.productUnitPrice | currency }}</span>
+          <span class="product-total-price">Total Price: {{ product.productQuantity * product.productUnitPrice | currency }}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div> -->
+
+
+
+
   </div>
 </div>
 
